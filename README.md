@@ -1,6 +1,6 @@
-Performance Improvement from Previous Pokedex (https://github.com/fadhilradh/pokedex-react-sc) which use React JS
+Performance Improvement from Previous Pokedex (https://github.com/fadhilradh/pokedex-react-sc) which use React.
 
-This website implement simplified Static Site Generator and Server-Side Rendering from Next JS
+This website implement simplified Static Site Generator and Server-Side Rendering from Next JS.
 
 Deployed at :  https://pokedex-ssr-ssg.vercel.app
 
