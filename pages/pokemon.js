@@ -1,5 +1,6 @@
-import Layout from "../components/Layout";
 import Link from "next/link";
+import Image from "next/image";
+import Layout from "../components/Layout";
 
 export default function pokemon({ pokemon }) {
    return (
@@ -7,7 +8,13 @@ export default function pokemon({ pokemon }) {
          <h1 className="text-4xl mb-2 text-center capitalize">
             {pokemon.name}
          </h1>
-         <img className="mx-auto" src={pokemon.image} alt={pokemon.name} />
+         <Image
+            className="mx-auto"
+            width={300}
+            height={300}
+            src={pokemon.image}
+            alt={pokemon.name}
+         />
          <p>
             <span className="font-bold mr-2">Weight: </span> {pokemon.weight}
          </p>

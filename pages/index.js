@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home({ pokemons }) {
    return (
@@ -10,12 +11,16 @@ export default function Home({ pokemons }) {
                <li key={pokemon.name}>
                   <Link href={`/pokemon?id=${index + 1}`}>
                      <a className="flex items-center text-lg bg-gray-200 border p-4 border-gray my-2 capitalize rounded-md">
-                        <img
-                           className="w-20 h-20 mr-3"
+                        <Image
+                           className=" mr-3"
                            src={pokemon.image}
                            alt={pokemon.name}
+                           width={200}
+                           height={200}
                         />
-                        <p className="font-bold ml-2">{pokemon.name}</p>
+                        <p className="font-bold ml-2 text-4xl">
+                           {pokemon.name}
+                        </p>
                      </a>
                   </Link>
                </li>
@@ -27,7 +32,7 @@ export default function Home({ pokemons }) {
 
 export async function getStaticProps(context) {
    try {
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
       const { results } = await res.json();
       const pokemons = results.map((result, index) => {
          const paddedIndex = ("00" + (index + 1)).slice(-3);
